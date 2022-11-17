@@ -2,11 +2,48 @@ sap.ui.define([], function() {
     return {
         onIssue : function(oEvent) {
             console.log(this)
-            issueEinv(oEvent)
+            // issueEinv(oEvent)
+            callApi()
          }
     }
   })
 
-function issueEinv(oEvent) {
-    console.log(oEvent)
+
+var userName = "ct.abap"
+var password = "123456zZ@#"
+// var base64 = require('base-64')
+var headers = new Headers()
+
+//headers.append('Content-Type', 'text/json');
+// headers.append('Authorization', 'Basic' + base64.encode(userName + ":" + password));
+// function authenticateUser(user, password) {
+//     var token = user + ":" + password
+//     var hash = btoa(token)
+//     return "Basic" + hash
+// }
+// function issueEinv(oEvent) {
+//     console.log(oEvent)
+//     callOdataApi()
+//     // var accountAuth = btoa("ct.abap:123456zZ@#")
+//     // var auth = {"Authorization" : `Basic${accountAuth}`}
+//     // fetch("http://s4training.citek.vn:8085/sap/opu/odata/sap/ZUI_EINV/" , {header : auth})
+//     // .then((response) => response.json)
+//     // .then((data) => console.log(data))
+// }
+
+// function callOdataApi() {
+//     // var request = new XMLHttpRequest()
+//     // request.open("GET", "http://s4training.citek.vn:8085/sap/opu/odata/sap/ZUI_EINV/" ,false)
+//     // request.setRequestHeader("Authorization", authenticateUser(userName, password))
+//     // request.send()
+//     // request.status
+//     // console(request.responseText)
+//     var url = "http://s4training.citek.vn:8085/sap/opu/odata/sap/ZUI_EINV/"
+//     fetch(url, {method : 'GET' , headers : headers})
+//     .then(response => response.json())
+//     .then((data) => console.log(data))
+// }
+
+function callApi() {
+    console.log("Call API")
 }
