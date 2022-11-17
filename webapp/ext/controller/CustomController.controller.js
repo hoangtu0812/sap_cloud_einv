@@ -46,4 +46,18 @@ var headers = new Headers()
 
 function callApi() {
     console.log("Call API")
+    var myHeaders = new Headers();
+myHeaders.append("Authorization", "Basic Q1QuYWJhcDoxMjM0NTZ6WkAj");
+myHeaders.append("Cookie", "SAP_SESSIONID_S19_100=-938PQ8wcbXxra39iMLmEDBKaPdmoxHthd8AUFaALcc%3d; sap-usercontext=sap-client=100");
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+fetch("http://s4training.citek.vn:8085/sap/opu/odata/sap/ZUI_EINV/", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
 }
